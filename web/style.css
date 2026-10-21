@@ -368,13 +368,19 @@ footer span {
     grid-template-columns: 1fr;
   }
   .filter {
+    width: 150px;
     max-width: 150px;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
   }
   .filter select {
+    width: 100%;
+    min-width: 0;
     max-width: 100%;
   }
   .section-heading {
     align-items: start;
+    flex-wrap: wrap;
   }
   footer span {
     margin: 0;

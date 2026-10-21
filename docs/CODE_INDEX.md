@@ -1195,10 +1195,12 @@ Line numbers refer to formatted source, not this generated document.
 | 364 | `.stat` |
 | 367 | `.test-cards` |
 | 370 | `.filter` |
-| 373 | `.filter select` |
-| 376 | `.section-heading` |
-| 379 | `footer span` |
-| 380 | `margin` |
+| 371 | `width` |
+| 376 | `.filter select` |
+| 377 | `width` |
+| 381 | `.section-heading` |
+| 385 | `footer span` |
+| 386 | `margin` |
 
 ## web/tokens.css
 
