@@ -1,6 +1,7 @@
 """Local evidence-kit CLI by Jason Stys. Function main and argument locations: docs/CODE_INDEX.md.
 
-No network sources, hardware commands or shell commands; output files are create-only.
+No hardware/shell commands; optional delivery verification contacts GitHub through trusted gh.
+Output files are create-only. The browser and mission graph have no external data sources.
 """
 
 import argparse

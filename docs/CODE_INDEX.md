@@ -14,30 +14,30 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 20 | `definition main` |
-| 20 | `parameter argv` |
-| 22 | `variable parser` |
-| 23 | `variable commands` |
-| 24 | `variable serve` |
-| 27 | `variable export` |
-| 29 | `variable choices` |
-| 29 | `variable key` |
-| 35 | `variable gate` |
-| 37 | `variable delivery` |
-| 45 | `variable args` |
-| 48 | `variable run` |
-| 54 | `variable policy` |
-| 57 | `variable manifest` |
-| 58 | `variable stream` |
-| 74 | `variable key` |
-| 74 | `variable settings` |
-| 75 | `variable run` |
-| 76 | `variable _` |
-| 76 | `variable body` |
-| 79 | `variable stream` |
-| 83 | `variable assets` |
-| 86 | `variable server` |
-| 87 | `variable url` |
+| 21 | `definition main` |
+| 21 | `parameter argv` |
+| 23 | `variable parser` |
+| 24 | `variable commands` |
+| 25 | `variable serve` |
+| 28 | `variable export` |
+| 30 | `variable choices` |
+| 30 | `variable key` |
+| 36 | `variable gate` |
+| 38 | `variable delivery` |
+| 46 | `variable args` |
+| 49 | `variable run` |
+| 55 | `variable policy` |
+| 58 | `variable manifest` |
+| 59 | `variable stream` |
+| 75 | `variable key` |
+| 75 | `variable settings` |
+| 76 | `variable run` |
+| 77 | `variable _` |
+| 77 | `variable body` |
+| 80 | `variable stream` |
+| 84 | `variable assets` |
+| 87 | `variable server` |
+| 88 | `variable url` |
 
 ## evidencekit/delivery/__init__.py
 
