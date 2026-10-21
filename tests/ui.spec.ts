@@ -69,9 +69,25 @@ test("late response cannot restore invalidated results", async ({ page }) => {
 });
 test("mobile layout stays within viewport", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  expect(
-    await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
-  ).toBeTruthy();
+  const dimensions = await page.evaluate(() => ({
+    viewport: window.innerWidth,
+    document: document.documentElement.scrollWidth,
+    overflow: [...document.querySelectorAll("body *")]
+      .filter(
+        (element) =>
+          element.getBoundingClientRect().right > window.innerWidth + 1 &&
+          !element.closest(".table-wrap"),
+      )
+      .map((element) => ({
+        tag: element.tagName,
+        id: element.id,
+        class: element.className,
+        width: element.getBoundingClientRect().width,
+        right: element.getBoundingClientRect().right,
+      }))
+      .slice(0, 12),
+  }));
+  expect(dimensions.document, JSON.stringify(dimensions)).toBeLessThanOrEqual(dimensions.viewport);
 });
 test("WCAG serious and critical checks", async ({ page }) => {
   const scan = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();

@@ -705,7 +705,16 @@ Line numbers refer to formatted source, not this generated document.
 | 56 | `release` |
 | 57 | `pending` |
 | 58 | `release` |
-| 77 | `scan` |
+| 72 | `dimensions` |
+| 73 | `viewport` |
+| 74 | `document` |
+| 75 | `overflow` |
+| 82 | `tag` |
+| 83 | `id` |
+| 84 | `class` |
+| 85 | `width` |
+| 86 | `right` |
+| 93 | `scan` |
 
 ## tools/benchmark.py
 
