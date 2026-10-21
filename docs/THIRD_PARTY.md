@@ -1,0 +1,9 @@
+# Third-party notices and provenance
+
+Author: Jason Stys. Original project source is MIT (`LICENSE`). All spacecraft scenarios and input data are invented. No institution/vendor endorsement, logo, proprietary mission data or third-party measurements are used.
+
+The original MIT notice for reused secure-delivery verifier and adapted test code is retained in `licenses/SECURE_DELIVERY.txt`; provenance/snapshot and behavioral scope are described in [PROVENANCE.md](PROVENANCE.md). Runtime Python uses CPython's standard library, including SQLite/JSON/XML/HTTP/CSV. Complete CPython distributed notices, including its bundled third-party sections, are in `licenses/PYTHON.txt`. Actual runtime shared libraries vary by runner/platform.
+
+The portable builder includes project license, CPython notice, secure-delivery MIT notice, **actual locked installed PyInstaller COPYING.txt** (GPL with bootloader exception) and **actual installed Vite LICENSE.md** with its bundled notices. Linux additionally retains Ubuntu/Debian GCC runtime copyright notices and GPL-3 text for potentially collected compiler runtimes. These notices do not change the MIT license on original source. Review the extracted `_internal` files for redistribution decisions; this inventory is not legal advice or a claim that every optional OS component is redistributed.
+
+Pinned development tools include TypeScript, Vite, Vitest, Playwright, axe-core, Prettier, pytest, Hypothesis, coverage, Ruff, mypy, pip-audit and PyInstaller; exact transitive versions/hashes are in both lockfiles. Only first-party built UI and injected build helpers enter the web bundle. Fonts are local system fallbacks; no remote image/analytics asset is loaded. Research links in architecture inform the design; no upstream NASA implementation or dataset is copied.

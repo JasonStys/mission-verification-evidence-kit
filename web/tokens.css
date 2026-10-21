@@ -1,0 +1,8 @@
+/* Jason Stys: local design tokens; variables indexed in docs/CODE_INDEX.md. */
+:root {
+  --paper: #f7f8f5;
+  --ink: #172d34;
+  --muted: #50616a;
+  --accent: #126251;
+  --line: #d4dddc;
+}

@@ -1,0 +1,50 @@
+{
+  "complete": {
+    "accepted_tests": 3,
+    "blocked": 0,
+    "ready": true,
+    "release_source_matches": true,
+    "total": 3,
+    "verified": 3
+  },
+  "fault-gap": {
+    "accepted_tests": 3,
+    "blocked": 1,
+    "ready": false,
+    "release_source_matches": true,
+    "total": 3,
+    "verified": 2
+  },
+  "missing": {
+    "accepted_tests": 3,
+    "blocked": 1,
+    "ready": false,
+    "release_source_matches": true,
+    "total": 4,
+    "verified": 3
+  },
+  "mixed": {
+    "accepted_tests": 0,
+    "blocked": 3,
+    "ready": false,
+    "release_source_matches": false,
+    "total": 3,
+    "verified": 0
+  },
+  "regression": {
+    "accepted_tests": 2,
+    "blocked": 1,
+    "ready": false,
+    "release_source_matches": true,
+    "total": 3,
+    "verified": 2
+  },
+  "stale": {
+    "accepted_tests": 2,
+    "blocked": 1,
+    "ready": false,
+    "release_source_matches": true,
+    "total": 3,
+    "verified": 2
+  }
+}

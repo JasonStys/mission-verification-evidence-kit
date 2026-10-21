@@ -1,0 +1,75 @@
+# File catalog
+
+Every tracked-intent file; dependencies/private outputs are excluded.
+
+- `.gitattributes` — Normalize source text to LF and preserve binary screenshot assets.
+- `.github/workflows/codeql.yml` — # Security and quality analysis by Jason Stys; variables/jobs: docs/FILE_CATALOG.md.
+- `.github/workflows/release.yml` — # Draft-only portable publishing by Jason Stys. Exact-commit successful workflows gate each release.
+- `.github/workflows/validate.yml` — # Local mission-evidence verification by Jason Stys. Matrix/contracts: docs/VALIDATION.md.
+- `.gitignore` — Exclude dependencies, runtime/private data, histories and generated builds from Git.
+- `.prettierignore` — Exclude generated indexes, locks and build/dependency trees from formatting.
+- `.prettierrc.json` — Shared readable browser/configuration/Markdown formatting options.
+- `LICENSE` — MIT License
+- `README.md` — # Mission Verification Evidence Kit
+- `SECURITY.md` — # Security boundaries
+- `docs/ARCHITECTURE.md` — # Architecture and decisions
+- `docs/LIMITATIONS.md` — # Honest limits
+- `docs/PROVENANCE.md` — # Reused delivery verifier and provenance distinction
+- `docs/RELEASE.md` — # Release procedure and rollback
+- `docs/SCHEMA.md` — # Input schema, API and gate semantics
+- `docs/THIRD_PARTY.md` — # Third-party notices and provenance
+- `docs/USER_GUIDE.md` — # User guide and troubleshooting
+- `docs/VALIDATION.md` — # Validation plan and measured results
+- `docs/reports/benchmark.json` — Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.
+- `evidencekit/__init__.py` — """Mission verification evidence contracts by Jason Stys; index: docs/CODE_INDEX.md."""
+- `evidencekit/__main__.py` — """Local evidence-kit CLI by Jason Stys. Function main and argument locations: docs/CODE_INDEX.md.
+- `evidencekit/delivery/__init__.py` — """Reviewed secure-delivery verification reuse by Jason Stys; see docs/PROVENANCE.md."""
+- `evidencekit/delivery/io.py` — """Bounded, duplicate-safe JSON and atomic file operations. Created by Jason Stys."""
+- `evidencekit/delivery/verify.py` — """Fail-closed release and GitHub identity verification. Created by Jason Stys."""
+- `evidencekit/engine.py` — """Deterministic graph evaluation plus independent SQL cross-check by Jason Stys.
+- `evidencekit/junit.py` — """Bounded JUnit-to-traceability adapter by Jason Stys; never execute submitted commands.
+- `evidencekit/model.py` — """Strict bounded traceability input and synthetic fixtures by Jason Stys.
+- `evidencekit/reports.py` — """Inert evidence exports and optional private history by Jason Stys.
+- `evidencekit/resources/history.sql` — -- Jason Stys: immutable local content-identity history, no accounts or automatic retention deletion.
+- `evidencekit/resources/verify.sql` — -- Jason Stys: independent traceability verdicts; :document is bound JSON, never SQL text.
+- `evidencekit/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
+- `examples/recorder.json` — Editable strict synthetic spacecraft-recorder requirements/test/fault/result graph.
+- `launcher.py` — """Portable local application entry by Jason Stys; main contract: docs/CODE_INDEX.md."""
+- `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE
+- `licenses/SECURE_DELIVERY.txt` — MIT License
+- `package-lock.json` — Resolved npm dependency graph with download integrity values.
+- `package.json` — Pinned browser dependencies, Node version contract and build/test/audit scripts.
+- `playwright.config.ts` — /** Real three-browser mission-lab acceptance by Jason Stys. Fields: docs/CODE_INDEX.md. */
+- `pyproject.toml` — Python metadata, supported runtimes, strict lint/type/test and coverage gates.
+- `requirements-dev.in` — Scientific test, type, style, audit and packaging dependency inputs.
+- `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
+- `requirements.in` — Standard-library-only Python runtime declaration (no third-party runtime packages).
+- `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
+- `tests/conftest.py` — """Isolated unsigned release fixtures and deterministic properties by Jason Stys.
+- `tests/format.test.ts` — /** Jason Stys: pure UI contracts. Functions/variables: docs/CODE_INDEX.md. */
+- `tests/test_cli.py` — """Owned CLI startup and delivery wiring tests by Jason Stys. Index: docs/CODE_INDEX.md."""
+- `tests/test_core.py` — """Traceability, mutation, boundary, property and private-history tests by Jason Stys.
+- `tests/test_delivery_boundaries.py` — """Bounded JSON, files, archives and trust-policy rejection tests. Created by Jason Stys."""
+- `tests/test_junit.py` — """JUnit adapter adversarial and outcome tests by Jason Stys. Exact locations: docs/CODE_INDEX.md."""
+- `tests/test_recorder_demo.py` — """Actual fictional recorder behavioral tests by Jason Stys; JUnit mapping: evidencekit/junit.py.
+- `tests/test_server.py` — """Real loopback routing, origin and method security by Jason Stys. Index: docs/CODE_INDEX.md."""
+- `tests/ui.spec.ts` — /** Jason Stys: real Chromium/Firefox/WebKit acceptance, accessibility and race tests. Index: docs/CODE_INDEX.md. */
+- `tools/benchmark.py` — """Reviewed evidence contracts plus informational Python resource measurement by Jason Stys.
+- `tools/capture_demo.py` — """Run only the fixed authored recorder suite and gate its real JUnit evidence by Jason Stys.
+- `tools/collect_evidence.py` — """Convert actual reviewed-suite JUnit into gateable inputs by Jason Stys.
+- `tools/package_app.py` — """Freeze and verify portable evidence-kit bundles by Jason Stys. Index: docs/CODE_INDEX.md.
+- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
+- `tools/smoke_app.py` — """Exercise a freshly reviewed frozen app by Jason Stys. Functions/variables: docs/CODE_INDEX.md."""
+- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
+- `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
+- `vitest.config.ts` — /** Unit-test boundary by Jason Stys; browser acceptance has its own Playwright runner. */
+- `web/env.d.ts` — /** Jason Stys: Vite asset typing for strict TypeScript. Index: docs/CODE_INDEX.md. */
+- `web/format.ts` — /** Jason Stys: typed report rendering helpers. Functions/fields: docs/CODE_INDEX.md. */
+- `web/index.html` — <!-- Jason Stys: accessible local mission evidence workbench; structure/IDs: docs/CODE_INDEX.md. -->
+- `web/main.ts` — /** Jason Stys: race-safe, text-only evidence UI. Variables current/generation; exact lines: docs/CODE_INDEX.md. */
+- `web/style.css` — /* Jason Stys: responsive high-contrast engineering notebook UI; selectors: docs/CODE_INDEX.md. */
+- `web/tokens.css` — /* Jason Stys: local design tokens; variables indexed in docs/CODE_INDEX.md. */
+- `web/vite.config.ts` — /** Local production asset build by Jason Stys. Configuration variables: docs/CODE_INDEX.md. */
+- `docs/CODE_INDEX.md` — Generated exact-line source inventory.
+- `docs/FILE_CATALOG.md` — This generated complete file index.

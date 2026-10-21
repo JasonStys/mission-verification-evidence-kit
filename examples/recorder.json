@@ -1,0 +1,93 @@
+{
+  "as_of": 1800000000,
+  "faults": [
+    { "id": "FAULT-RESET", "requirements": ["REQ-RECOVER"], "title": "Reset during collection" },
+    { "id": "FAULT-INPUT", "requirements": ["REQ-REJECT"], "title": "Truncated sample" }
+  ],
+  "max_age": 86400,
+  "release": {
+    "artifact": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "requirements": [
+    {
+      "criticality": "critical",
+      "id": "REQ-STORE",
+      "revision": 1,
+      "title": "Recorder preserves accepted samples"
+    },
+    {
+      "criticality": "critical",
+      "id": "REQ-RECOVER",
+      "revision": 1,
+      "title": "Recorder recovers after simulated reset"
+    },
+    {
+      "criticality": "standard",
+      "id": "REQ-REJECT",
+      "revision": 1,
+      "title": "Malformed samples produce a diagnostic"
+    }
+  ],
+  "results": [
+    {
+      "artifact": "1111111111111111111111111111111111111111111111111111111111111111",
+      "attempt": 1,
+      "baselines": { "REQ-STORE": 1 },
+      "completed": 1799998200,
+      "definition": "1111111111111111111111111111111111111111111111111111111111111111",
+      "id": "RESULT-1",
+      "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": "pass",
+      "test": "TEST-STORE"
+    },
+    {
+      "artifact": "2222222222222222222222222222222222222222222222222222222222222222",
+      "attempt": 1,
+      "baselines": { "REQ-RECOVER": 1 },
+      "completed": 1799998200,
+      "definition": "2222222222222222222222222222222222222222222222222222222222222222",
+      "id": "RESULT-2",
+      "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": "pass",
+      "test": "TEST-RESET"
+    },
+    {
+      "artifact": "3333333333333333333333333333333333333333333333333333333333333333",
+      "attempt": 1,
+      "baselines": { "REQ-REJECT": 1 },
+      "completed": 1799998200,
+      "definition": "3333333333333333333333333333333333333333333333333333333333333333",
+      "id": "RESULT-3",
+      "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": "pass",
+      "test": "TEST-INVALID"
+    }
+  ],
+  "schema": 1,
+  "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "tests": [
+    {
+      "definition": "1111111111111111111111111111111111111111111111111111111111111111",
+      "faults": [],
+      "id": "TEST-STORE",
+      "requirements": ["REQ-STORE"],
+      "title": "Round-trip synthetic samples"
+    },
+    {
+      "definition": "2222222222222222222222222222222222222222222222222222222222222222",
+      "faults": ["FAULT-RESET"],
+      "id": "TEST-RESET",
+      "requirements": ["REQ-RECOVER"],
+      "title": "Simulated reset recovery"
+    },
+    {
+      "definition": "3333333333333333333333333333333333333333333333333333333333333333",
+      "faults": ["FAULT-INPUT"],
+      "id": "TEST-INVALID",
+      "requirements": ["REQ-REJECT"],
+      "title": "Reject truncated sample"
+    }
+  ],
+  "title": "Fictional spacecraft recorder"
+}
