@@ -131,61 +131,61 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 17 | `variable ROOT` |
-| 20 | `definition sql_reference` |
-| 20 | `parameter value` |
-| 22 | `variable query` |
-| 23 | `variable db` |
-| 25 | `variable row` |
-| 28 | `definition analyze` |
-| 28 | `parameter document` |
-| 30 | `variable value` |
-| 31 | `variable latest` |
-| 32 | `variable chronology` |
-| 33 | `variable result` |
-| 34 | `variable key` |
-| 38 | `variable backwards` |
-| 40 | `variable key` |
-| 40 | `variable times` |
-| 41 | `variable a` |
-| 41 | `variable b` |
-| 43 | `variable test_rows` |
-| 44 | `variable linked` |
-| 44 | `variable r` |
+| 18 | `variable ROOT` |
+| 21 | `definition sql_reference` |
+| 21 | `parameter value` |
+| 23 | `variable query` |
+| 24 | `variable db` |
+| 26 | `variable row` |
+| 29 | `definition analyze` |
+| 29 | `parameter document` |
+| 31 | `variable value` |
+| 32 | `variable latest` |
+| 33 | `variable chronology` |
+| 34 | `variable result` |
+| 35 | `variable key` |
+| 39 | `variable backwards` |
+| 41 | `variable key` |
+| 41 | `variable times` |
+| 42 | `variable a` |
+| 42 | `variable b` |
+| 44 | `variable test_rows` |
+| 45 | `variable linked` |
 | 45 | `variable r` |
-| 45 | `variable revisions` |
-| 46 | `parameter t` |
-| 46 | `variable test` |
-| 47 | `variable result` |
-| 48 | `variable reasons` |
-| 58 | `variable r` |
-| 60 | `variable age` |
-| 67 | `variable row` |
-| 77 | `variable req` |
-| 79 | `variable rows` |
-| 80 | `parameter r` |
-| 80 | `variable req` |
-| 81 | `variable tests` |
-| 82 | `variable f` |
-| 82 | `variable faults` |
-| 83 | `variable uncovered` |
-| 85 | `variable f` |
-| 86 | `variable t` |
-| 88 | `variable reasons` |
-| 91 | `variable t` |
-| 98 | `variable t` |
-| 99 | `variable f` |
-| 105 | `variable reference` |
-| 106 | `variable expected` |
-| 106 | `variable row` |
-| 109 | `variable release_match` |
-| 110 | `variable report` |
-| 117 | `variable r` |
-| 118 | `variable r` |
-| 119 | `variable t` |
-| 121 | `variable r` |
-| 133 | `definition build_run` |
-| 133 | `parameter settings` |
+| 46 | `variable r` |
+| 46 | `variable revisions` |
+| 47 | `parameter t` |
+| 47 | `variable test` |
+| 48 | `variable result` |
+| 49 | `variable reasons` |
+| 59 | `variable r` |
+| 61 | `variable age` |
+| 68 | `variable row` |
+| 78 | `variable req` |
+| 80 | `variable rows` |
+| 81 | `parameter r` |
+| 81 | `variable req` |
+| 82 | `variable tests` |
+| 83 | `variable f` |
+| 83 | `variable faults` |
+| 84 | `variable uncovered` |
+| 86 | `variable f` |
+| 87 | `variable t` |
+| 89 | `variable reasons` |
+| 92 | `variable t` |
+| 99 | `variable t` |
+| 100 | `variable f` |
+| 106 | `variable reference` |
+| 107 | `variable expected` |
+| 107 | `variable row` |
+| 110 | `variable release_match` |
+| 111 | `variable report` |
+| 119 | `variable r` |
+| 120 | `variable r` |
+| 121 | `variable t` |
+| 123 | `variable r` |
+| 135 | `definition build_run` |
+| 135 | `parameter settings` |
 
 ## evidencekit/junit.py
 
@@ -326,6 +326,33 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
+
+## evidencekit/revalidation.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 11 | `definition revalidation_queue` |
+| 12 | `parameter requirements` |
+| 12 | `parameter tests` |
+| 12 | `parameter value` |
+| 19 | `variable definitions` |
+| 19 | `variable test` |
+| 20 | `variable baselines` |
+| 20 | `variable requirement` |
+| 21 | `variable queue` |
+| 22 | `variable test` |
+| 23 | `variable result` |
+| 24 | `variable expires` |
+| 30 | `variable req` |
+| 44 | `variable req` |
+| 49 | `parameter item` |
+| 56 | `variable gaps` |
+| 57 | `variable requirement` |
+| 62 | `variable fault` |
+| 63 | `variable configured` |
+| 65 | `variable test` |
+| 76 | `variable deadlines` |
+| 77 | `variable item` |
 
 ## evidencekit/server.py
 
@@ -654,6 +681,32 @@ Line numbers refer to formatted source, not this generated document.
 | 33 | `parameter tmp_path` |
 | 35 | `variable path` |
 
+## tests/test_revalidation.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 13 | `definition test_exact_freshness_boundary_and_expected_baselines` |
+| 15 | `variable value` |
+| 17 | `variable run` |
+| 18 | `variable queue` |
+| 19 | `variable item` |
+| 24 | `variable later` |
+| 26 | `variable late` |
+| 31 | `definition test_regression_priority_structural_gap_and_release_action` |
+| 33 | `variable regression` |
+| 34 | `variable first` |
+| 36 | `variable missing` |
+| 38 | `variable gap` |
+| 40 | `variable fault` |
+| 42 | `variable gap` |
+| 45 | `variable value` |
+| 50 | `definition test_chronology_requires_investigation_and_unaccepted_fault_links_remain_visible` |
+| 52 | `variable value` |
+| 53 | `variable second` |
+| 56 | `variable run` |
+| 57 | `variable item` |
+| 60 | `variable gap` |
+
 ## tests/test_server.py
 
 | Line | Definition / variable / structural identifier |
@@ -699,22 +752,22 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 41 | `name` |
-| 42 | `download` |
-| 44 | `file` |
-| 56 | `release` |
-| 57 | `pending` |
-| 58 | `release` |
-| 72 | `dimensions` |
-| 73 | `viewport` |
-| 74 | `document` |
-| 75 | `overflow` |
-| 82 | `tag` |
-| 83 | `id` |
-| 84 | `class` |
-| 85 | `width` |
-| 86 | `right` |
-| 93 | `scan` |
+| 57 | `name` |
+| 58 | `download` |
+| 60 | `file` |
+| 72 | `release` |
+| 73 | `pending` |
+| 74 | `release` |
+| 88 | `dimensions` |
+| 89 | `viewport` |
+| 90 | `document` |
+| 91 | `overflow` |
+| 98 | `tag` |
+| 99 | `id` |
+| 100 | `class` |
+| 101 | `width` |
+| 102 | `right` |
+| 109 | `scan` |
 
 ## tools/benchmark.py
 
@@ -920,10 +973,29 @@ Line numbers refer to formatted source, not this generated document.
 | 35 | `release_source_matches` |
 | 36 | `ready` |
 | 38 | `verification` |
-| 41 | `reason` |
-| 45 | `visibleRows` |
-| 49 | `downloadUrl` |
-| 55 | `timestamp` |
+| 39 | `revalidation` |
+| 40 | `as_of` |
+| 41 | `next_expiry_second` |
+| 42 | `release_source_action` |
+| 43 | `tests` |
+| 44 | `test` |
+| 45 | `state` |
+| 46 | `critical` |
+| 47 | `requirements` |
+| 48 | `reasons` |
+| 49 | `first_invalid_second` |
+| 50 | `seconds_until_invalid` |
+| 51 | `action` |
+| 52 | `expected` |
+| 54 | `coverage_gaps` |
+| 55 | `requirement` |
+| 56 | `kind` |
+| 57 | `fault` |
+| 58 | `configured_tests` |
+| 63 | `reason` |
+| 67 | `visibleRows` |
+| 71 | `downloadUrl` |
+| 77 | `timestamp` |
 
 ## web/index.html
 
@@ -977,33 +1049,38 @@ Line numbers refer to formatted source, not this generated document.
 | 22 | `result` |
 | 28 | `render` |
 | 29 | `current` |
-| 33 | `stats` |
-| 41 | `card` |
-| 48 | `tests` |
-| 50 | `test` |
-| 51 | `card` |
-| 71 | `downloads` |
-| 73 | `format` |
-| 74 | `link` |
-| 76 | `format` |
-| 89 | `renderRows` |
-| 90 | `body` |
-| 93 | `rows` |
-| 95 | `row` |
-| 96 | `tr` |
-| 97 | `identity` |
-| 104 | `verdict` |
-| 119 | `evaluate` |
-| 120 | `ticket` |
-| 121 | `selected` |
-| 122 | `maxAge` |
-| 124 | `current` |
-| 127 | `response` |
-| 131 | `report` |
-| 144 | `invalidate` |
-| 146 | `current` |
-| 152 | `evaluate` |
-| 157 | `evaluate` |
+| 30 | `queue` |
+| 32 | `queue` |
+| 52 | `item` |
+| 53 | `details` |
+| 67 | `gap` |
+| 79 | `stats` |
+| 87 | `card` |
+| 94 | `tests` |
+| 96 | `test` |
+| 97 | `card` |
+| 117 | `downloads` |
+| 119 | `format` |
+| 120 | `link` |
+| 122 | `format` |
+| 135 | `renderRows` |
+| 136 | `body` |
+| 139 | `rows` |
+| 141 | `row` |
+| 142 | `tr` |
+| 143 | `identity` |
+| 150 | `verdict` |
+| 165 | `evaluate` |
+| 166 | `ticket` |
+| 167 | `selected` |
+| 168 | `maxAge` |
+| 170 | `current` |
+| 173 | `response` |
+| 177 | `report` |
+| 190 | `invalidate` |
+| 192 | `current` |
+| 198 | `evaluate` |
+| 203 | `evaluate` |
 
 ## web/style.css
 

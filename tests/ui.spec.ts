@@ -6,6 +6,22 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText("Declared evidence is complete", { exact: true })).toBeVisible();
 });
+test("revalidation queue distinguishes blocked tests and missing procedures", async ({ page }) => {
+  await expect(page.locator("#revalidation-queue details")).toHaveCount(3);
+  await expect(page.locator("#revalidation-queue")).toContainText("first-invalid instant");
+  await page.locator("#scenario").selectOption("regression");
+  await page.getByRole("button", { name: "Evaluate baseline" }).click();
+  await expect(page.locator("#revalidation-queue summary").first()).toContainText(
+    "critical · blocked",
+  );
+  await page.locator("#revalidation-queue summary").first().click();
+  await expect(page.locator("#revalidation-queue details").first()).toContainText(
+    "capture current test evidence",
+  );
+  await page.locator("#scenario").selectOption("missing");
+  await page.getByRole("button", { name: "Evaluate baseline" }).click();
+  await expect(page.locator("#revalidation-queue")).toContainText("missing procedure");
+});
 test("default matrix and full help", async ({ page }) => {
   await expect(page.locator("#rows tr")).toHaveCount(3);
   await expect(page.getByText("PYTHON ↔ SQL CROSS-CHECK")).toBeVisible();

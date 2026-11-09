@@ -1,5 +1,7 @@
 # Mission Verification Evidence Kit
 
+Use the [revalidation work queue](docs/REVALIDATION_QUEUE.md) to prioritize blocked critical evidence, inspect exact expected source/definition/revision metadata and plan against declared freshness deadlines. Structural coverage gaps, chronology conflicts and release-source mismatches remain separate actions; the queue never waives or changes a gate.
+
 [![Validation](https://github.com/JasonStys/mission-verification-evidence-kit/actions/workflows/validate.yml/badge.svg)](https://github.com/JasonStys/mission-verification-evidence-kit/actions/workflows/validate.yml)
 [![CodeQL](https://github.com/JasonStys/mission-verification-evidence-kit/actions/workflows/codeql.yml/badge.svg)](https://github.com/JasonStys/mission-verification-evidence-kit/actions/workflows/codeql.yml)
 
