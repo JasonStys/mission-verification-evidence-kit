@@ -27,6 +27,52 @@ function node(tag: string, value: string, className = ""): HTMLElement {
 /** Render one coherent accepted report; never mix pending settings with previous evidence. */
 function render(report: Report, selected: string, maxAge: number): void {
   current = report;
+  let queue = document.getElementById("revalidation-queue");
+  if (!queue) {
+    queue = document.createElement("section");
+    queue.id = "revalidation-queue";
+    queue.className = "panel";
+    results.append(queue);
+  }
+  queue.replaceChildren(
+    node("h2", "Revalidation work queue"),
+    node(
+      "p",
+      "Blocked critical evidence comes first, followed by freshness deadlines. All clocks are declared fixture times, not live reminders. Reruns do not fix missing procedures/links or erase chronology conflicts; this checklist does not waive any gate or authenticate supplied evidence.",
+    ),
+  );
+  queue.append(
+    node(
+      "p",
+      report.revalidation.next_expiry_second === null
+        ? "No accepted evidence has a freshness deadline."
+        : `Next first-invalid instant: ${timestamp(report.revalidation.next_expiry_second)}. Age equal to max_age remains accepted; the next integer second is invalid.`,
+    ),
+  );
+  for (const item of report.revalidation.tests) {
+    const details = node("details", "");
+    details.append(
+      node(
+        "summary",
+        `${item.test} · ${item.critical ? "critical" : "standard"} · ${reason(item.state)} · ${item.seconds_until_invalid === null ? "requires review" : item.seconds_until_invalid + " seconds until invalid"}`,
+      ),
+      node(
+        "p",
+        `Action: ${reason(item.action)}. Affects ${item.requirements.join(", ")}. Reasons: ${item.reasons.map(reason).join(", ") || "currently accepted"}.`,
+      ),
+      node("pre", JSON.stringify(item.expected, null, 2)),
+    );
+    queue.append(details);
+  }
+  for (const gap of report.revalidation.coverage_gaps)
+    queue.append(
+      node(
+        "p",
+        `${gap.requirement} / ${gap.fault ?? "no procedure"}: ${reason(gap.kind)}${gap.configured_tests?.length ? " · " + gap.configured_tests.join(", ") : ""}.`,
+      ),
+    );
+  if (report.revalidation.release_source_action)
+    queue.append(node("p", reason(report.revalidation.release_source_action)));
   element("verdict").textContent = report.summary.ready
     ? "Declared evidence is complete"
     : "Baseline needs attention";

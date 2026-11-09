@@ -36,6 +36,28 @@ export interface Report {
     ready: boolean;
   };
   verification: { sql_agrees: boolean; provenance_authenticated: boolean };
+  revalidation: {
+    as_of: number;
+    next_expiry_second: number | null;
+    release_source_action: string | null;
+    tests: {
+      test: string;
+      state: string;
+      critical: boolean;
+      requirements: string[];
+      reasons: string[];
+      first_invalid_second: number | null;
+      seconds_until_invalid: number | null;
+      action: string;
+      expected: { source: string; definition: string; baselines: Record<string, number> };
+    }[];
+    coverage_gaps: {
+      requirement: string;
+      kind: string;
+      fault: string | null;
+      configured_tests?: string[];
+    }[];
+  };
 }
 /** Convert a reason code into readable text, without accepting markup. */
 export function reason(value: string): string {

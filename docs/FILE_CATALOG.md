@@ -16,10 +16,12 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/LIMITATIONS.md` — # Honest limits
 - `docs/PROVENANCE.md` — # Reused delivery verifier and provenance distinction
 - `docs/RELEASE.md` — # Release procedure and rollback
+- `docs/REVALIDATION_QUEUE.md` — # Plan evidence revalidation
 - `docs/SCHEMA.md` — # Input schema, API and gate semantics
 - `docs/THIRD_PARTY.md` — # Third-party notices and provenance
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation plan and measured results
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Revalidation queue validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.
 - `evidencekit/__init__.py` — """Mission verification evidence contracts by Jason Stys; index: docs/CODE_INDEX.md."""
 - `evidencekit/__main__.py` — """Local evidence-kit CLI by Jason Stys. Function main and argument locations: docs/CODE_INDEX.md.
@@ -32,6 +34,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `evidencekit/reports.py` — """Inert evidence exports and optional private history by Jason Stys.
 - `evidencekit/resources/history.sql` — -- Jason Stys: immutable local content-identity history, no accounts or automatic retention deletion.
 - `evidencekit/resources/verify.sql` — -- Jason Stys: independent traceability verdicts; :document is bound JSON, never SQL text.
+- `evidencekit/revalidation.py` — """Actionable declared-evidence revalidation queue by Jason Stys.
 - `evidencekit/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
 - `examples/recorder.json` — Editable strict synthetic spacecraft-recorder requirements/test/fault/result graph.
 - `launcher.py` — """Portable local application entry by Jason Stys; main contract: docs/CODE_INDEX.md."""
@@ -52,6 +55,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_delivery_boundaries.py` — """Bounded JSON, files, archives and trust-policy rejection tests. Created by Jason Stys."""
 - `tests/test_junit.py` — """JUnit adapter adversarial and outcome tests by Jason Stys. Exact locations: docs/CODE_INDEX.md."""
 - `tests/test_recorder_demo.py` — """Actual fictional recorder behavioral tests by Jason Stys; JUnit mapping: evidencekit/junit.py.
+- `tests/test_revalidation.py` — """Independent declared-evidence queue expectations by Jason Stys.
 - `tests/test_server.py` — """Real loopback routing, origin and method security by Jason Stys. Index: docs/CODE_INDEX.md."""
 - `tests/ui.spec.ts` — /** Jason Stys: real Chromium/Firefox/WebKit acceptance, accessibility and race tests. Index: docs/CODE_INDEX.md. */
 - `tools/benchmark.py` — """Reviewed evidence contracts plus informational Python resource measurement by Jason Stys.

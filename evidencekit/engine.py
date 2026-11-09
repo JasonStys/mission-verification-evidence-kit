@@ -13,6 +13,7 @@ from typing import Any
 
 from evidencekit.delivery.io import canonical
 from evidencekit.model import Settings, fixture, validate
+from evidencekit.revalidation import revalidation_queue
 
 ROOT = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parents[1]))
 
@@ -112,6 +113,7 @@ def analyze(document: dict[str, Any]) -> dict[str, Any]:
         "input": value,
         "requirements": rows,
         "tests": test_rows,
+        "revalidation": revalidation_queue(value, test_rows, rows),
         "summary": {
             "total": len(rows),
             "verified": sum(r["status"] == "verified" for r in rows),
