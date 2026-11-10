@@ -93,3 +93,7 @@ python tools/package_app.py
 The [file catalog](docs/FILE_CATALOG.md) summarizes **every file**. The generated [exact-line code index](docs/CODE_INDEX.md) lists functions, classes, arguments, assigned variables and structural identifiers; source headers describe responsibilities and link to that maintained index instead of duplicating fragile line numbers.
 
 Start with [user guide](docs/USER_GUIDE.md), [schema/API](docs/SCHEMA.md), [architecture](docs/ARCHITECTURE.md), [security](SECURITY.md), [validation](docs/VALIDATION.md), [provenance integration](docs/PROVENANCE.md), and [limitations](docs/LIMITATIONS.md).
+
+## Current portable release preparation
+
+Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
