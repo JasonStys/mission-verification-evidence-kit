@@ -21,10 +21,16 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/THIRD_PARTY.md` — # Third-party notices and provenance
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation plan and measured results
+- `docs/handbook.md` — # Mission Verification Evidence Kit handbook
 - `docs/releases/v1.1.0.md` — # Version 1.1.0 — Mission Verification Evidence Kit
 - `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Revalidation queue validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.
+- `docs/reports/documentation-refresh-2026-11-09.md` — # Documentation refresh — 2026-11-09
+- `docs/reports/project-guide.docx` — Reviewed Word project guide bound to the documented source revision.
+- `docs/reports/publications.json` — Exact Office publication byte identities, approved page/tab scopes and immutable source baselines.
+- `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
+- `docs/reports/validation-review.docx` — Reviewed Word validation evidence and explicit test/analysis limitations.
 - `evidencekit/__init__.py` — """Mission verification evidence contracts by Jason Stys; index: docs/CODE_INDEX.md."""
 - `evidencekit/__main__.py` — """Local evidence-kit CLI by Jason Stys. Function main and argument locations: docs/CODE_INDEX.md.
 - `evidencekit/delivery/__init__.py` — """Reviewed secure-delivery verification reuse by Jason Stys; see docs/PROVENANCE.md."""
