@@ -32,6 +32,10 @@ SKIP = {
 }
 SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp", ".rs"}
 FILE_PURPOSES = {
+    "docs/reports/project-guide.docx": "Reviewed Word project guide bound to the documented source revision.",
+    "docs/reports/validation-review.docx": "Reviewed Word validation evidence and explicit test/analysis limitations.",
+    "docs/reports/validation-evidence.xlsx": "Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.",
+    "docs/reports/publications.json": "Exact Office publication byte identities, approved page/tab scopes and immutable source baselines.",
     "examples/recorder.json": "Editable strict synthetic spacecraft-recorder requirements/test/fault/result graph.",
     "docs/reports/benchmark.json": "Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.",
     ".gitattributes": "Normalize source text to LF and preserve binary screenshot assets.",
@@ -115,9 +119,18 @@ def inventory() -> tuple[str, str]:
         if relative in {"docs/CODE_INDEX.md", "docs/FILE_CATALOG.md"}:
             continue
         content = (
-            "Binary screenshot asset from local application validation"
-            if path.suffix in {".jpg", ".png"}
-            else path.read_text(encoding="utf-8")
+            FILE_PURPOSES[relative]
+            if relative
+            in {
+                "docs/reports/project-guide.docx",
+                "docs/reports/validation-review.docx",
+                "docs/reports/validation-evidence.xlsx",
+            }
+            else (
+                "Binary screenshot asset from local application validation"
+                if path.suffix in {".jpg", ".png"}
+                else path.read_text(encoding="utf-8")
+            )
         )
         summary = content.splitlines()[0][:150] if content.splitlines() else "Empty file"
         summary = FILE_PURPOSES.get(relative, summary)

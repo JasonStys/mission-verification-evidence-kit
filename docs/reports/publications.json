@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "project": "mission-verification-evidence-kit",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+  "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5",
+  "functionalEvidenceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42752189945,
+      "event": "push",
+      "headSha": "2743307a90da1621392fcafa138b6e103db751d5",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42752190053,
+      "event": "push",
+      "headSha": "2743307a90da1621392fcafa138b6e103db751d5",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053"
+    }
+  ],
+  "summary": "The released 1.1.0 portable evidence kit includes metadata-bound revalidation queues: prioritize blocked critical tests, see exact freshness deadlines, identify missing procedures and preserve the source and baseline revisions needed for review.",
+  "rationale": "The original requirement/test/fault traceability, SQL cross-check, export formats and immutable local history are retained. The extracted app verifies a failed critical test, an independently calculated first-invalid timestamp, missing-procedure guidance and an exact JSON download. It turns declared evidence gaps into a practical human review queue without waiving gates or pretending to execute tests.",
+  "limitations": [
+    "Declared synthetic evidence consistency only; SQL agreement does not authenticate provenance or reveal omitted requirements.",
+    "The queue plans human review; it does not execute tests, waive release gates or establish flight qualification.",
+    "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 43160,
+      "sha256": "65699c69e4e0ec36ab5d8a05949be4c145d02cb17ecb0b27171f7397328cb4dc",
+      "sourceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "aa8e44ea24df6cf2f79a7be8ea240de1ca98ef4842b8e83bf183a79039f81756",
+          "page-2.png": "a4f99a4135f9ce1dc7a4a265ebc9019a2b235aae5d0187077bcc1364ea1d2f12",
+          "page-3.png": "9244be2a2ef8fd9c1bfbd51c63944778bceeaea2f0a38001509cbd5730099cd1",
+          "page-4.png": "2f6180124f49687e3eb93513d36ca7cd97e5a385a9f1f1e74d543d36da2d6de7"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 41986,
+      "sha256": "d493b5e2078d2113db685c545486a657621c9dd3d5637e9c538b0f97474e72c2",
+      "sourceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 3,
+        "renderedPageSha256": {
+          "page-1.png": "cc3a72daf07746fbf1af45c6c524a35eae30088f24fff647e8d7d9f0430c8458",
+          "page-2.png": "94ec740dd82c0793c64ede2a4176f68935010598f4dd1971f6f3c200aaabd010",
+          "page-3.png": "8214d5422cb34180d729069604fed859af1ddb0d15eb22dde6106b82828afd9b"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7465,
+      "sha256": "5acef53e65fea7bae3d870d1858aee02319e3aa9c501950904fad0282b8da028",
+      "sourceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Workflow evidence", "Test sources"],
+        "previewSha256": {
+          "workflow-evidence.png": "24dc3a6dd3ae098ace409447c68f53ffd4b4990212e655db325560c7e2ad970a",
+          "test-sources.png": "60c886a59a53cc190180ea0c1bfacd6fe3052f65a59a63c426d70d191de481bf"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C21",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
