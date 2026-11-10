@@ -56,6 +56,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_cli.py` — """Owned CLI startup and delivery wiring tests by Jason Stys. Index: docs/CODE_INDEX.md."""
 - `tests/test_core.py` — """Traceability, mutation, boundary, property and private-history tests by Jason Stys.
 - `tests/test_delivery_boundaries.py` — """Bounded JSON, files, archives and trust-policy rejection tests. Created by Jason Stys."""
+- `tests/test_draft_lookup.py` — """Independent real-shape draft API contract fixtures by Jason Stys.
 - `tests/test_junit.py` — """JUnit adapter adversarial and outcome tests by Jason Stys. Exact locations: docs/CODE_INDEX.md."""
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
@@ -67,6 +68,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tools/benchmark.py` — """Reviewed evidence contracts plus informational Python resource measurement by Jason Stys.
 - `tools/capture_demo.py` — """Run only the fixed authored recorder suite and gate its real JUnit evidence by Jason Stys.
 - `tools/collect_evidence.py` — """Convert actual reviewed-suite JUnit into gateable inputs by Jason Stys.
+- `tools/draft_lookup.py` — """Bounded authenticated draft lookup by Jason Stys.
 - `tools/legacy_smoke.py` — """Exercise a freshly reviewed frozen app by Jason Stys. Functions/variables: docs/CODE_INDEX.md."""
 - `tools/native_browser.mjs` — /**
 - `tools/native_feature_smoke.mjs` — /** Jason Stys — extracted declared-evidence revalidation queue and genuine JSON export.
