@@ -1,20 +1,42 @@
-"""Freeze and verify portable evidence-kit bundles by Jason Stys. Index: docs/CODE_INDEX.md.
+"""Build and verify versioned portable applications by Jason Stys.
 
-Function main; variables: fixed resources, notice paths, executable, archive digest. No installer/elevation.
+Function: main. Variables: config, source metadata, fixed worker and owned extraction directory.
+Only the actual extracted binary is accepted. Exact lines: docs/CODE_INDEX.md. No installer hooks.
 """
 
+import argparse
 import hashlib
-import platform
+import json
 import shutil
 import subprocess
 import sys
+import tempfile
 from importlib.metadata import distribution
 from pathlib import Path
 
+if __package__:
+    from .portable_archive import archive_metadata, create_archive, extract_archive
+    from .release_contract import ROOT, asset_paths, configuration, require, source_metadata
+else:
+    from portable_archive import archive_metadata, create_archive, extract_archive
+    from release_contract import ROOT, asset_paths, configuration, require, source_metadata
 
-def main() -> None:
-    """Include production assets, SQL and actual runtime notices; smoke before creating an unsigned ZIP."""
-    root = Path(__file__).resolve().parents[1]
+
+def main() -> int:
+    """Build from pinned dependencies, preserve native archive semantics, then exercise extracted UI."""
+    parser = argparse.ArgumentParser(
+        description="Build and test this platform's portable application"
+    )
+    parser.add_argument("--output-root", type=Path, default=ROOT / "dist")
+    args = parser.parse_args()
+    config, metadata = configuration(), source_metadata()
+    require((ROOT / "web/dist/index.html").is_file(), "Build production web assets first")
+    generated = ROOT / ".runtime/package-meta"
+    generated.mkdir(parents=True, exist_ok=True)
+    identity = generated / "RELEASE.json"
+    identity.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+    executable_name = config["executable"]
+    root = ROOT
     if not (root / "web/dist/index.html").is_file():
         raise SystemExit("Build production assets first")
     command = [
@@ -59,30 +81,39 @@ def main() -> None:
                 ["--add-data", str(source) + ":licenses/compiler-runtime/" + source.parent.name]
             )
     command.append("launcher.py")
-    subprocess.run(command, cwd=root, check=True, timeout=600)
-    executable = (
-        root
-        / "dist/MissionVerificationEvidenceKit"
-        / (
-            "MissionVerificationEvidenceKit.exe"
-            if sys.platform == "win32"
-            else "MissionVerificationEvidenceKit"
+    command[command.index("launcher.py") : command.index("launcher.py")] = [
+        "--add-data",
+        str(identity) + ":evidencekit/resources",
+    ]
+    subprocess.run(command, cwd=ROOT, check=True, timeout=600)
+    bundle = ROOT / "dist" / executable_name
+    shutil.copyfile(identity, bundle / "RELEASE.json")
+    archive, checksum = asset_paths(metadata)
+    archive, checksum = (
+        args.output_root.resolve() / archive.name,
+        args.output_root.resolve() / checksum.name,
+    )
+    archive.parent.mkdir(parents=True, exist_ok=True)
+    require(not checksum.exists(), "Checksum destination already exists")
+    create_archive(bundle, archive)
+    require(
+        archive_metadata(archive, executable_name) == metadata, "Created archive identity mismatch"
+    )
+    with tempfile.TemporaryDirectory(prefix="flight-extracted-") as temporary:
+        extracted = extract_archive(archive, Path(temporary) / "unpacked", executable_name)
+        executable = extracted / (executable_name + (".exe" if sys.platform == "win32" else ""))
+        subprocess.run(
+            [sys.executable, str(ROOT / "tools/smoke_app.py"), str(executable)],
+            cwd=temporary,
+            check=True,
+            timeout=120,
         )
-    )
-    subprocess.run(
-        [sys.executable, "tools/smoke_app.py", str(executable)], cwd=root, check=True, timeout=120
-    )
-    slug = f"mission-verification-evidence-kit-{platform.system().lower()}-{platform.machine().lower()}"
-    archive = Path(
-        shutil.make_archive(
-            str(root / "dist" / slug), "zip", root / "dist", "MissionVerificationEvidenceKit"
-        )
-    )
-    with archive.open("rb") as stream:
-        digest = hashlib.file_digest(stream, "sha256").hexdigest()
-    (root / "dist" / (slug + ".sha256")).write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
-    print(f"Verified portable bundle: {archive.name} SHA-256 {digest}")
+    with archive.open("rb") as source:
+        digest = hashlib.file_digest(source, "sha256").hexdigest()
+    checksum.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
+    print(f"Extracted portable application passed: {archive.name} SHA-256 {digest}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

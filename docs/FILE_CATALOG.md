@@ -15,12 +15,14 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
 - `docs/LIMITATIONS.md` — # Honest limits
 - `docs/PROVENANCE.md` — # Reused delivery verifier and provenance distinction
-- `docs/RELEASE.md` — # Release procedure and rollback
+- `docs/RELEASE.md` — # Release, operation and rollback
 - `docs/REVALIDATION_QUEUE.md` — # Plan evidence revalidation
 - `docs/SCHEMA.md` — # Input schema, API and gate semantics
 - `docs/THIRD_PARTY.md` — # Third-party notices and provenance
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation plan and measured results
+- `docs/releases/v1.1.0.md` — # Version 1.1.0 — Mission Verification Evidence Kit
+- `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Revalidation queue validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.
 - `evidencekit/__init__.py` — """Mission verification evidence contracts by Jason Stys; index: docs/CODE_INDEX.md."""
@@ -31,6 +33,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `evidencekit/engine.py` — """Deterministic graph evaluation plus independent SQL cross-check by Jason Stys.
 - `evidencekit/junit.py` — """Bounded JUnit-to-traceability adapter by Jason Stys; never execute submitted commands.
 - `evidencekit/model.py` — """Strict bounded traceability input and synthetic fixtures by Jason Stys.
+- `evidencekit/package_info.py` — """Read bounded frozen-build identity by Jason Stys, never a user-profile configuration.
 - `evidencekit/reports.py` — """Inert evidence exports and optional private history by Jason Stys.
 - `evidencekit/resources/history.sql` — -- Jason Stys: immutable local content-identity history, no accounts or automatic retention deletion.
 - `evidencekit/resources/verify.sql` — -- Jason Stys: independent traceability verdicts; :document is bound JSON, never SQL text.
@@ -54,17 +57,25 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_core.py` — """Traceability, mutation, boundary, property and private-history tests by Jason Stys.
 - `tests/test_delivery_boundaries.py` — """Bounded JSON, files, archives and trust-policy rejection tests. Created by Jason Stys."""
 - `tests/test_junit.py` — """JUnit adapter adversarial and outcome tests by Jason Stys. Exact locations: docs/CODE_INDEX.md."""
+- `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
+- `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
 - `tests/test_recorder_demo.py` — """Actual fictional recorder behavioral tests by Jason Stys; JUnit mapping: evidencekit/junit.py.
+- `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/test_revalidation.py` — """Independent declared-evidence queue expectations by Jason Stys.
 - `tests/test_server.py` — """Real loopback routing, origin and method security by Jason Stys. Index: docs/CODE_INDEX.md."""
 - `tests/ui.spec.ts` — /** Jason Stys: real Chromium/Firefox/WebKit acceptance, accessibility and race tests. Index: docs/CODE_INDEX.md. */
 - `tools/benchmark.py` — """Reviewed evidence contracts plus informational Python resource measurement by Jason Stys.
 - `tools/capture_demo.py` — """Run only the fixed authored recorder suite and gate its real JUnit evidence by Jason Stys.
 - `tools/collect_evidence.py` — """Convert actual reviewed-suite JUnit into gateable inputs by Jason Stys.
-- `tools/package_app.py` — """Freeze and verify portable evidence-kit bundles by Jason Stys. Index: docs/CODE_INDEX.md.
-- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
-- `tools/smoke_app.py` — """Exercise a freshly reviewed frozen app by Jason Stys. Functions/variables: docs/CODE_INDEX.md."""
-- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/legacy_smoke.py` — """Exercise a freshly reviewed frozen app by Jason Stys. Functions/variables: docs/CODE_INDEX.md."""
+- `tools/native_browser.mjs` — /**
+- `tools/native_feature_smoke.mjs` — /** Jason Stys — extracted declared-evidence revalidation queue and genuine JSON export.
+- `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
+- `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
+- `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
+- `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
+- `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
 - `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
 - `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
 - `vitest.config.ts` — /** Unit-test boundary by Jason Stys; browser acceptance has its own Playwright runner. */

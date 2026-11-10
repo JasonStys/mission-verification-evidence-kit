@@ -30,7 +30,7 @@ SKIP = {
     "test-results",
     "playwright-report",
 }
-SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp", ".rs"}
+SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp", ".rs"}
 FILE_PURPOSES = {
     "examples/recorder.json": "Editable strict synthetic spacecraft-recorder requirements/test/fault/result graph.",
     "docs/reports/benchmark.json": "Reviewed six-scenario requirement verdict contracts, checked across Python versions/platforms.",
