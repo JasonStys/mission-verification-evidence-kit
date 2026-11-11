@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "repository": "mission-verification-evidence-kit",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "2743307a90da1621392fcafa138b6e103db751d5",
+  "createdAt": "2026-11-10T23:52:13.833Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "24bdfb7fa028902ea53e2b89170a1ec47124dc62b8fcf7f92301940797a941b8",
+  "screenshots": [
+    {
+      "file": "01-regression-queue.png",
+      "sha256": "a26b196da7b50ccc4165a291d9962322a53ee3ae1853cc48a2de640018f27696",
+      "width": 1296,
+      "height": 557,
+      "caption": "Actual installed application showing failed and expiring test queue. Captured during the accepted native user journey with prepared synthetic inputs."
+    },
+    {
+      "file": "02-missing-evidence.png",
+      "sha256": "3cb345b25a400a6c2f67f7bc09862d97e3d67b45c5a695a0ab720c460eaf704c",
+      "width": 1296,
+      "height": 421,
+      "caption": "Actual installed application showing missing procedure baseline. Captured during the accepted native user journey with prepared synthetic inputs."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "evidencekit/revalidation.py",
+      "first": 23,
+      "last": 44,
+      "sha256": "b4f6bc06c131936e18e62e5439fcf37f1809f449be537d8d945f3baa9e591334",
+      "url": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/evidencekit/revalidation.py#L23"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "SQL and core results agreed; provenance_authenticated remained false. Failed, stale and missing baseline reasons retained separate source and expiry bindings.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:38:57.764697+00:00",
+    "reviewers": [
+      "audit_apps"
+    ],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "56f449167c61c116fdd0cd72cf51089584ad85ff51cc9a7a61785ee23ca2807d",
+      "2": "bddde66f1fc3e54da16fdf1de5e4cb5bf789f019d31b141fbd1d0117c6ac9c9f",
+      "3": "307b97ec8c745b291037ed392647526a13facf56cde2eb02795b23ff331a16a6",
+      "4": "2a70f55b149965c4bca05de13e1a29fa00aeb1faa1d307a2b60e5b25a471393b"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}
